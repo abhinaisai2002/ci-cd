@@ -12,5 +12,9 @@ jobs:
     name: checking the environment
     runs-on: ubuntu-latest
     steps:
+      - name: echoing node version
+        run : echo node_version=`node -v` > "$GITHUB_OUTPUT"
+        id: node_step
       - name: checking the node version
-        run: echo "::notice file=app.js,line=1,col=5,endColumn=7::Missing semicolon"
+        run: ::debug::{{steps.node_step.outputs.node_version}}
+
