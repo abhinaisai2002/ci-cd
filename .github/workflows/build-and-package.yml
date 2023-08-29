@@ -35,7 +35,6 @@ jobs:
       - name: listing all the files
         run: |
           cd app
-          ls
       - name: installing dependencies
         run: |
           ls
