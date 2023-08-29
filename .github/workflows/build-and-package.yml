@@ -31,7 +31,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           ref: ${{ github.sha }}
-          path: '/app'
+          path: './app'
       - name: listing all the files
         run: |
           cd app
