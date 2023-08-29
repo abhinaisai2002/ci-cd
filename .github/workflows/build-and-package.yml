@@ -29,6 +29,10 @@ jobs:
       - uses: actions/checkout@v3
         with:
           ref: ${{ github.sha }}
+          path: '/app'
       - name: listing all the files
         run: |
-          ls
+          cd
+          echo "::notice listing all the files::${{steps.node_step.outputs.node_version}}"
+      - name: installing dependencies
+        run: npm install			  
