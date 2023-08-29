@@ -37,4 +37,6 @@ jobs:
           cd app
           ls
       - name: installing dependencies
-        run: npm install			  
+        run: |
+          ls
+          npm install			  
