@@ -3,7 +3,7 @@ name: Build and package
 on:
   push:
     branches:
-      - "main"
+      - "abhinai"
 
 jobs:
   log:
