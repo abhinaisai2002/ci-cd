@@ -8,6 +8,8 @@ on:
 
 jobs:
   checking_environment:
+    outputs:
+      node_version: ${{ steps.node_step.outputs.node_version }}
     name: checking the environment
     runs-on: ubuntu-latest
     steps:
@@ -16,5 +18,17 @@ jobs:
         id: node_step
       - name: checking the node version
         run: echo "::notice::${{steps.node_step.outputs.node_version}}"
-
-
+  code_checkout:
+    needs: checking_environment
+    if: success()
+    name: checking out the code from the repo	  
+    runs-on: ubuntu-latest
+    steps:
+      - name: confirming node version
+        run: echo "::notice::${{needs.checking_environment.outputs.node_version}}"
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.sha }}
+      - name: listing all the files
+        run: |
+          ls
