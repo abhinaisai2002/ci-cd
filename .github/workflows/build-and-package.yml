@@ -2,14 +2,12 @@ name: Build and package
 run-name: Deploy to ${{ inputs.deploy_target }} by @${{ github.actor }}
 
 on:
-  push:
-		branches:
-	  	- abhinai
+  workflow_dispatch
 
 jobs:
-  setting__and_checking_environment:
-		name: checking the environment
-		runs-on: ubuntu-latest
-		steps:
-	  	- name: checking the node version
-				run: echo "::notice file=app.js,line=1,col=5,endColumn=7::Missing semicolon"
+  checking_environment:
+    name: checking the environment
+    runs-on: ubuntu-latest
+    steps:
+      - name: checking the node version
+        run: echo "::notice file=app.js,line=1,col=5,endColumn=7::Missing semicolon"
