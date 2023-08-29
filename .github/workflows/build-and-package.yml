@@ -3,16 +3,10 @@ run-name: Deploy to ${{ inputs.deploy_target }} by @${{ github.actor }}
 
 on:
   push:
-    branches:
-      - "abhinai"
-  workflow_dispatch:
-    
+		branches:
+	  	- abhinai
 
 jobs:
-  log:
-    name: log a message in the console
-    runs-on: ubuntu-latest
-    steps:
-      - name: echoing a message in the console
-        run: |
-          node -v
+  setting_environment:
+		name: installing nodev20
+		runs-on: ubuntu-latest
