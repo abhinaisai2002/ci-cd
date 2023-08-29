@@ -13,4 +13,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: echoing a message in the console
-        run: ls
+        run: |
+          mkdir abhinai
+          cd abhinai
+          touch a.html
+      - name : cd into abhinai
+        run: |
+          cd abhinai
+          ls
