@@ -1,0 +1,14 @@
+name: Build and package
+
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  log:
+    name: log a message in the console
+    runs-on: ubuntu-latest
+    steps:
+      - name: echoing a message in the console
+        run: echo "ls"
